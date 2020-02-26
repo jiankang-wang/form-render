@@ -3,7 +3,7 @@
     "type": "object",
     "properties": {
       "string": {
-        "title": "字符串",
+        "title": "1字符串",
         "type": "string"
       },
       "select": {

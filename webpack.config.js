@@ -15,6 +15,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.json5$/,
+        use: 'json5-loader',
+        type: 'javascript/auto',
+      },
+      {
         test: /\.jsx?$/,
         use: ['babel-loader'],
         exclude: /node_modules/,

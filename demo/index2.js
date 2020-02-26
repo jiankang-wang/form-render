@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 // import FormRender from '../src/antd';
 import FormRender from '../src/fusion';
 import '@alifd/next/dist/next.min.css';
-import SCHEMA from './json/basic.json';
+import SCHEMA from './json/basic.json5';
 
 // const SCHEMA = {
 //   propsSchema: {

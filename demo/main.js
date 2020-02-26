@@ -5,7 +5,7 @@ import AntdComp from '../src/antd';
 import FusionComp from '../src/fusion';
 import '../atom.css';
 import CODE from '!!raw-loader!./FrDemo';
-import DefaultSchema from './json/simplest.json';
+import DefaultSchema from './json/simplest.json5';
 import { Tabs } from 'antd';
 import AsyncSelect from './customized/AsyncSelect';
 import CodeBlock from './monaco';
@@ -23,14 +23,14 @@ class Demo extends React.Component {
   componentDidUpdate(prevProps) {
     const { schemaName } = this.props;
     if (prevProps.schemaName !== schemaName) {
-      const schema = require(`./json/${schemaName}.json`);
+      const schema = require(`./json/${schemaName}.json5`);
       this.setState({ schemaStr: schema2str(schema) });
     }
   }
 
   getSchemaString = () => {
     const { schemaName } = this.props;
-    const schema = require(`./json/${schemaName}.json`);
+    const schema = require(`./json/${schemaName}.json5`);
     return schema2str(schema);
   };
 
