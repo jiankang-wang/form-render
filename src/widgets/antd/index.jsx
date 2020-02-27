@@ -51,6 +51,8 @@ export const mapping = {
   'string:image': 'input',
   'range:date': 'dateRange',
   'range:dateTime': 'dateRange',
+  'range:month': 'dateRange',
+  'range:week': 'dateRange',
   '*?enum': 'select',
   'array?enum': 'checkboxes',
   '*?readonly': 'text',

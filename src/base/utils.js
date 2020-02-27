@@ -68,6 +68,9 @@ export function getFormat(format) {
     case 'time':
       dateFormat = 'HH:mm:ss';
       break;
+    case 'month':
+      dateFormat = 'YYYY-MM';
+      break;
     default:
       // dateTime
       dateFormat = 'YYYY-MM-DD HH:mm:ss';

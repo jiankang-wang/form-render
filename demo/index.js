@@ -17,7 +17,7 @@ class Root extends Component {
     schemaName: 'default',
     theme: 'antd',
     column: 1,
-    displayType: 'column',
+    displayType: 'row',
     showDescIcon: false,
     readOnly: false,
     labelWidth: 110,

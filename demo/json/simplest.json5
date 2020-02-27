@@ -2,14 +2,74 @@
   "propsSchema": {
     "type": "object",
     "properties": {
-      "string": {
-        "title": "1字符串",
-        "type": "string"
+      orderType: {
+        title: '时间搜索方式',
+        "enum": ['day', 'week'],
+        "enumNames": ['按天', '按周'],
+        "ui:widget": "radio",
+         'ui:radioType': 'button'
       },
-      "select": {
-        "title": "单选",
-        "type": "string",
-        "enum": ["a", "b", "c"]
+      "inDateRange": {
+        "title": "粉丝新增日期",
+        "type": "range",
+        "format": "dateTime",
+        "ui:width": "50%",
+        "ui:options": {
+          "placeholder": ["开始", "结束"]
+        }
+      },
+      "buyDateRange": {
+        "title": "产出日期",
+        "type": "range",
+        "format": "week",
+        "ui:width": "50%",
+        "ui:options": {
+          "mode": ["week",'week'],
+          "placeholder": ["开始", "结束"],
+        }
+      },
+      searchType: {
+        title: '搜索方式',
+        "enum": ['shop', 'team'],
+        "enumNames": ['店铺', '团队'],
+        "ui:widget": "radio",
+         'ui:radioType': 'button'
+      },
+      "searchShopForm": {
+        "type": "object",
+        "ui:hidden": "{{rootValue.searchType !== 'team'}}",
+        "properties": {
+          "select": {
+            "title": "店铺",
+            "type": "string",
+            "enum": ["a"],
+            "enumNames": ['女王新款']
+          }
+        }
+      },
+      "searchTeamForm": {
+        "type": "object",
+        "ui:hidden": "{{rootValue.searchType !== 'shop'}}",
+        "properties": {
+          "team": {
+            "title": "团队",
+            "type": "string",
+            "enum": ["a"],
+            "enumNames": ['天鹰教-众创计划'],
+          },
+          "chart1": {
+            "type": "string",
+            "default": "图表一",
+            "ui:widget": "asyncSelect",
+            "ui:width": "50%",
+          },
+          "chart2": {
+            "type": "string",
+            "default": "图表二",
+            "ui:widget": "asyncSelect",
+            "ui:width": "50%",
+          }
+        }
       }
     }
   }
